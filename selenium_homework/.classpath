@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium-server-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-api-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-api-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-chrome-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-chrome-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-chromium-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-chromium-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v85-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v85-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v106-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v106-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v107-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v107-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v108-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-devtools-v108-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-edge-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-edge-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-firefox-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-firefox-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-http-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-http-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-ie-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-ie-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-java-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-java-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-json-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-json-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-manager-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-manager-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-remote-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-remote-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-safari-driver-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-safari-driver-4.7.2-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-support-4.7.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/setup/selenium/selenium_client_java/selenium-support-4.7.2-sources.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

@@ -32,9 +32,4 @@ public class TextEditorPage {
 			throw new Exception("Online html editor page did not load");
 		}
 	}
-
-	public void doubleClickOnText(int x, int y) {
-
-	}
-
 }

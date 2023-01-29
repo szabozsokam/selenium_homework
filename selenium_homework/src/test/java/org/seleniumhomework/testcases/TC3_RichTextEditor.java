@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.interactions.Actions;
 import org.seleniumhomework.common.TestBase;
 import org.seleniumhomework.pageobjects.onlinehtmleditor.TextEditorPage;
@@ -23,22 +22,20 @@ public class TC3_RichTextEditor extends TestBase {
 		driver.switchTo().frame(editorPage.textFrame);
 		editorPage.textbox.sendKeys("Automation Test Example");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		Rectangle rect = editorPage.textbox.getRect();
 		int fontSize = 16;
+		int editorWidth = 720;
 		// double click at middle of the word: 'Automation' - positioning is wrong who
 		// knows why
-		new Actions(driver).moveToElement(editorPage.textbox, rect.x + 4 * fontSize, rect.height / 2).doubleClick()
-				.perform();
-
+		new Actions(driver).moveToElement(editorPage.textbox, (4 * fontSize) - (editorWidth / 2), 0).doubleClick()
+				.build().perform();
 		driver.switchTo().defaultContent();
 		editorPage.boldIcon.click();
 
 		driver.switchTo().frame(editorPage.textFrame);
 		// double click at middle of the word: 'Test' - positioning is wrong who knows
 		// why
-		new Actions(driver).moveToElement(editorPage.textbox, rect.x + 13 * fontSize, rect.height / 2).doubleClick()
-				.perform();
-
+		new Actions(driver).moveToElement(editorPage.textbox, (13 * fontSize) - (editorWidth / 2), 0).doubleClick()
+				.build().perform();
 		driver.switchTo().defaultContent();
 		editorPage.underlineIcon.click();
 

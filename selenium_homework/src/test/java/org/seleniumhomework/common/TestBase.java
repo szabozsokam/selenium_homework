@@ -27,6 +27,7 @@ public class TestBase {
 		driver = BrowserFactory.getBrowser("chrome");
 		sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().window().maximize();
 	}
 
 	@AfterEach

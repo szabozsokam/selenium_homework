@@ -4,6 +4,8 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.seleniumhomework.common.TestBase;
 import org.seleniumhomework.pageobjects.sauce.SauceCartPage;
 import org.seleniumhomework.pageobjects.sauce.SauceCheckoutCompletePage;
@@ -30,16 +32,21 @@ public class TC1_Purchase extends TestBase {
 
 		// Step 3: go through the checkout process
 		productsPage.cartBadge.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+		new WebDriverWait(driver, Duration.ofSeconds(1))
+				.until(ExpectedConditions.urlToBe("https://www.saucedemo.com/cart.html"));
 		SauceCartPage cartPage = new SauceCartPage(driver);
 		cartPage.checkout();
+		new WebDriverWait(driver, Duration.ofSeconds(1))
+				.until(ExpectedConditions.urlToBe("https://www.saucedemo.com/checkout-step-one.html"));
 		SauceCheckoutFirstPage checkoutFirstPage = new SauceCheckoutFirstPage(driver);
-		checkoutFirstPage.fillData("Zsoka", "Szabo", "1011");
+		checkoutFirstPage.fillData("User", "Tester", "1011");
 		checkoutFirstPage.continueButton.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+		new WebDriverWait(driver, Duration.ofSeconds(1))
+				.until(ExpectedConditions.urlToBe("https://www.saucedemo.com/checkout-step-two.html"));
 		SauceCheckoutOverviewPage overviewPage = new SauceCheckoutOverviewPage(driver);
 		overviewPage.finishButton.click();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+		new WebDriverWait(driver, Duration.ofSeconds(1))
+				.until(ExpectedConditions.urlToBe("https://www.saucedemo.com/checkout-complete.html"));
 
 		// Step 4: validate successful order
 		SauceCheckoutCompletePage completePage = new SauceCheckoutCompletePage(driver);

@@ -14,14 +14,9 @@ public class SeleniumTutorialPage {
 	public WebElement joinNowButton;
 
 	private final WebDriver driver;
-	private String url = "https://www.guru99.com/selenium-tutorial.html";
 
 	public SeleniumTutorialPage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Guru99 selenium tutorial page did not load");
 		}
-	}
-
 }

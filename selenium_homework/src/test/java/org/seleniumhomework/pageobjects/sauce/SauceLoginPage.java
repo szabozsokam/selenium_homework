@@ -32,10 +32,10 @@ public class SauceLoginPage {
 
 	public SauceLoginPage(WebDriver driver) throws Exception {
 		this.driver = driver;
-		PageFactory.initElements(this.driver, this);
 		if (!driver.getCurrentUrl().equals(url)) {
 			throw new Exception("Current page is not the login page");
 		}
+		PageFactory.initElements(this.driver, this);
 	}
 
 	@SuppressWarnings("unchecked")

@@ -21,14 +21,10 @@ public class SauceCheckoutFirstPage extends TestBase {
 	public WebElement continueButton;
 
 	private final WebDriver driver;
-	private String url = "https://www.saucedemo.com/checkout-step-one.html";
 
 	public SauceCheckoutFirstPage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Checkout-step-one page did not load");
-		}
 	}
 
 	public void fillData(String firstName, String lastName, String postalCode) {

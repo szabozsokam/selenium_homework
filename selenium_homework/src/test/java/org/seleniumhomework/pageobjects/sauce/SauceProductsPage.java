@@ -37,10 +37,10 @@ public class SauceProductsPage {
 
 	public SauceProductsPage(WebDriver driver) throws Exception {
 		this.driver = driver;
-		PageFactory.initElements(this.driver, this);
 		if (!driver.getCurrentUrl().equals(url)) {
 			throw new Exception("Product page did not load");
 		}
+		PageFactory.initElements(this.driver, this);
 	}
 
 	public void addProductsToCart() {

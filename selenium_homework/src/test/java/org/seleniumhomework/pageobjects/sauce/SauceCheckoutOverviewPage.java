@@ -12,14 +12,10 @@ public class SauceCheckoutOverviewPage extends TestBase {
 	public WebElement finishButton;
 
 	private final WebDriver driver;
-	private String url = "https://www.saucedemo.com/checkout-step-two.html";
 
 	public SauceCheckoutOverviewPage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Checkout overview page did not load");
-		}
 	}
 
 }

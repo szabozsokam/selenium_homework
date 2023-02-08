@@ -7,11 +7,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TestBase {
 
-	public static String sessionId;
 	public static WebDriver driver;
 
 	@Rule
@@ -23,9 +21,7 @@ public class TestBase {
 
 	@BeforeEach
 	public void setUp() throws Exception {
-
 		driver = BrowserFactory.getBrowser("chrome");
-		sessionId = (((RemoteWebDriver) driver).getSessionId()).toString();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 	}
@@ -33,7 +29,6 @@ public class TestBase {
 	@AfterEach
 	public void tearDown() throws Exception {
 		if (driver != null) {
-			driver.close();
 			driver.quit();
 		}
 	}

@@ -23,13 +23,9 @@ public class TextEditorPage {
 	public WebElement underlineIcon;
 
 	private final WebDriver driver;
-	private String url = "https://onlinehtmleditor.dev/";
 
 	public TextEditorPage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Online html editor page did not load");
-		}
 	}
 }

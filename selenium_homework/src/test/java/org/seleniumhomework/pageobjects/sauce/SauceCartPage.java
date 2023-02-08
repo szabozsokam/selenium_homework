@@ -13,14 +13,10 @@ public class SauceCartPage {
 	private WebElement checkoutButton;
 
 	private final WebDriver driver;
-	private String url = "https://www.saucedemo.com/cart.html";
 
 	public SauceCartPage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Cart page did not load");
-		}
 	}
 
 	public void checkout() {

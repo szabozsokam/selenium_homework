@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BrowserFactory {
 	public static WebDriver getBrowser(String browserName) {
 		browserName = browserName.toLowerCase();
@@ -16,12 +18,12 @@ public class BrowserFactory {
 	}
 
 	private static FirefoxDriver getFFInstance() {
-		System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
+		WebDriverManager.firefoxdriver().setup();
 		return new FirefoxDriver();
 	}
 
 	private static ChromeDriver getChromeInstance() {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		return new ChromeDriver();
 	}
 

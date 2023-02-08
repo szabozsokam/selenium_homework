@@ -12,14 +12,10 @@ public class SauceCheckoutCompletePage extends TestBase {
 	public WebElement thankYouText;
 
 	private final WebDriver driver;
-	private String url = "https://www.saucedemo.com/checkout-complete.html";
 
 	public SauceCheckoutCompletePage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Checkout complete page did not load");
-		}
 	}
 
 }

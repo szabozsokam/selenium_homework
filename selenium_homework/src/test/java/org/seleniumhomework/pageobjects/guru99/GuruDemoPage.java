@@ -27,14 +27,10 @@ public class GuruDemoPage {
 	public WebElement seleniumMenuItem;
 
 	private final WebDriver driver;
-	private String url = "https://demo.guru99.com/test/guru99home/";
 
 	public GuruDemoPage(WebDriver driver) throws Exception {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-		if (!driver.getCurrentUrl().equals(url)) {
-			throw new Exception("Guru99 demo page did not load");
-		}
 	}
 	
 	public void hoverAndClick(WebElement elementToHover, WebElement elementToClick) {

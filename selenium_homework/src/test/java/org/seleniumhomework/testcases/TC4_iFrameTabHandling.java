@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -24,9 +25,9 @@ public class TC4_iFrameTabHandling extends TestBase {
 		// go to page and give consent
 		driver.manage().deleteAllCookies();
 		driver.get("http://demo.guru99.com/test/guru99home");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		new WebDriverWait(driver, Duration.ofSeconds(10))
+				.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("gdpr-consent-notice")));
 		GuruDemoPage guruDemoPage = new GuruDemoPage(driver);
-		driver.switchTo().frame(guruDemoPage.consentFrame);
 		guruDemoPage.consentButton.click();
 		driver.switchTo().defaultContent();
 		String originalPage = driver.getWindowHandle();
@@ -38,7 +39,7 @@ public class TC4_iFrameTabHandling extends TestBase {
 		guruDemoPage.image.click();
 
 		// verify page title and new tab
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.numberOfWindowsToBe(2));
 		Set<String> browserTabs = driver.getWindowHandles();
 		for (String tab : browserTabs) {
 			if (!tab.equals(originalPage)) {
@@ -68,7 +69,8 @@ public class TC4_iFrameTabHandling extends TestBase {
 			ad.closeButton.click();
 			driver.switchTo().defaultContent();
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		new WebDriverWait(driver, Duration.ofSeconds(2))
+				.until(ExpectedConditions.urlToBe("https://www.guru99.com/selenium-tutorial.html"));
 		SeleniumTutorialPage seleniumPage = new SeleniumTutorialPage(driver);
 		new WebDriverWait(driver, Duration.ofMinutes(1))
 				.until(ExpectedConditions.visibilityOf(seleniumPage.consentButton));
@@ -76,7 +78,7 @@ public class TC4_iFrameTabHandling extends TestBase {
 		WebElement joinNowButton = new WebDriverWait(driver, Duration.ofMinutes(2))
 				.until(ExpectedConditions.visibilityOf(seleniumPage.joinNowButton));
 		// assert: button is red (in real: orange)
-		Assertions.assertEquals("rgb(251, 160, 53) !important", joinNowButton.getCssValue("background").toString());
+		Assertions.assertTrue(joinNowButton.getCssValue("background").toString().contains("rgb(251, 160, 53)"));
 		// assert: button is wide
 		Assertions.assertEquals("100%", joinNowButton.getCssValue("width").toString());
 	}

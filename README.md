@@ -4,11 +4,7 @@ Preconditions:
 
     Selenium 3.141.59 (newer)
 
-    Junit5 or TestNG
-
-    Rest API: o Okhttp3 o Apache Http
-
-    Logger: o Slf4j o Log4j
+    Junit5
 
 Case 1 � Automate Purchase Process
 
